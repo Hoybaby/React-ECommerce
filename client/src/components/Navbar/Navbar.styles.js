@@ -18,10 +18,14 @@ export const Language = styled.div`
 
 export const SearchContainer = styled.div`
     border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
 
 `
 export const Left = styled.div`
+    display: flex;
     flex: 1;
+    align-items: center;
 `
 export const Center = styled.div`
     flex: 1;
