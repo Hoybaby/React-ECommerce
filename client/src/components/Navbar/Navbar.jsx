@@ -1,11 +1,22 @@
 import React from 'react'
-import { Container } from './Navbar.styles'
+import { Container, Wrapper, Language, SearchContainer, Left, Center, Right } from './Navbar.styles';
+import {Search} from '@material-ui/icons'
 
 const Navbar = () => {
     return (
         
             <Container>
-                <h1>Navbar</h1>
+                <Wrapper>   
+                    <Left> 
+                        <Language> English</Language>
+                        <SearchContainer>
+                            input
+                            <Search/>
+                        </SearchContainer>
+                    </Left>
+                    <Center> Center </Center>
+                    <Right> Right </Right>
+                </Wrapper>
             </Container>
         
     )
