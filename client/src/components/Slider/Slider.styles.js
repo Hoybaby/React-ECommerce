@@ -57,15 +57,22 @@ export const InfoContainer  = styled.div`
 `
 
 export const Title = styled.h1`
-
-
-`
-export const Description = styled.h1`
-
+    font-size : 70px;
 
 `
+export const Description = styled.p`
+    margin: 50px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
 
-export const Button = styled.h1`
+`
 
+export const Button = styled.button`
+
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
 
 `
