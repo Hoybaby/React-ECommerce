@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Right } from './Navbar.styles';
+import { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Right, Logo } from './Navbar.styles';
 import {Search} from '@material-ui/icons'
 
 const Navbar = () => {
@@ -14,7 +14,9 @@ const Navbar = () => {
                             <Search/>
                         </SearchContainer>
                     </Left>
-                    <Center> Center </Center>
+                    <Center> 
+                        <Logo> Hoybaby's Shop </Logo>
+                    </Center>
                     <Right> Right </Right>
                 </Wrapper>
             </Container>

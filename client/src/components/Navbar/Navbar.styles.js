@@ -26,7 +26,7 @@ export const SearchContainer = styled.div`
 `
 
 export const Input = styled.input`
-
+border: none;
 
 `
 export const Left = styled.div`
@@ -34,8 +34,14 @@ export const Left = styled.div`
     flex: 1;
     align-items: center;
 `
+// --------------------------------------------------Center-----------------------------------------------------
 export const Center = styled.div`
     flex: 1;
+`
+
+export const Logo = styled.h1`
+    font-weight: bold;
+    
 `
 export const Right = styled.div`
     flex: 1;
