@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Wrapper, Language, SearchContainer, Left, Center, Right } from './Navbar.styles';
+import { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Right } from './Navbar.styles';
 import {Search} from '@material-ui/icons'
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
                     <Left> 
                         <Language> English</Language>
                         <SearchContainer>
-                            input
+                            <Input/>
                             <Search/>
                         </SearchContainer>
                     </Left>

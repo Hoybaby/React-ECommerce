@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `
 export const Language = styled.div`
     font-size: 14px;
@@ -17,9 +18,15 @@ export const Language = styled.div`
 `
 
 export const SearchContainer = styled.div`
-    border: 1px solid lightgray;
+    border: 0.5px solid lightgray;
     display: flex;
     align-items: center;
+    margin-left: 25px;
+    padding: 5px;
+`
+
+export const Input = styled.input`
+
 
 `
 export const Left = styled.div`
