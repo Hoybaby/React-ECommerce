@@ -37,12 +37,22 @@ export const Left = styled.div`
 // --------------------------------------------------Center-----------------------------------------------------
 export const Center = styled.div`
     flex: 1;
+    text-align: center;
 `
 
 export const Logo = styled.h1`
     font-weight: bold;
-    
 `
+
+// ----------------------------------------------------Right-----------------------------------------------------
 export const Right = styled.div`
+    display: flex;
     flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+`
+
+export const MenuItem = styled.div`
+    font-size: 14px;
+    cursor: pointer;
 `
