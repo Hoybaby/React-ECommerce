@@ -10,4 +10,4 @@ Process
 
 <h1>Slider/Carousel</h1>
 
-<p></p>
+<p> As explained in the Navbar section, I wanted to improve my CSS skills and didnt want to use a carousel component from BootStrap or something similar. In order to create the slider/carousel, I first need to have the images I wanted to pick. In a portfolio, I used the same method to cycle through the images, descriptions and titles. I just imported the data and used the map() function on the array. Once the images were on the screen. I had to use Material-UI Icons to </p>
