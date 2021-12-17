@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: flex;
     /* background-color: coral; */
     position: relative;
+    overflow: hidden;
 `
 
 export const Arrow = styled.div`
@@ -25,10 +26,14 @@ export const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5s;
+    z-index:2;
     `
 
 export const Wrapper = styled.div`
     height: 100% ;
+    display: flex;
+    transform: translateX(${(props) => props.slideIndex * -100}vw);
+
 `
 
 export const Slide  = styled.div`
@@ -36,8 +41,7 @@ export const Slide  = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
-
-
+    background-color: #${props => props.bg};
 `
 export const ImgContainer  = styled.div`
     height: 100%;
