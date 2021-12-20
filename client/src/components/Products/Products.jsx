@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import {Container} from './Products.styles';
 
 const Products = () => {
     return (
-        <div>
-            
-        </div>
+        <Container>
+            {popularProducts.map((item) => (
+                <Product item={item} key={item.id}/>
+            ))}
+        </Container>
     )
 }
 

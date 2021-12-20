@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Container } from './Product.stlyes';
 
 const Product = () => {
     return (
-        <div>
+        <Container>
             
-        </div>
+        </Container>
     )
 }
 
