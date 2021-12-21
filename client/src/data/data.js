@@ -74,6 +74,6 @@ export const popularProducts = [
     },
     {
         id:8,
-        img:"https://litb-cgis.rightinthebox.com/images/640x640/202111/bps/product/inc/oaspkh1636630385166.jpg?fmt=webp&v=1",
+        img:"https://purepng.com/public/uploads/thumbnail//purepng.com-women-dressclothingwomen-dressfashion-women-dress-cloth-apparel-631522326975fyksg.png",
     },
 ]
