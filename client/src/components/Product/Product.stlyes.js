@@ -10,6 +10,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #f5fbfd;
+    position: relative;
     
 `
 // circle component is for the image to fit
@@ -26,8 +27,23 @@ export const Image = styled.img`
     z-index: 2;
 `
 export const Info = styled.div`
-    
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: gray;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 export const Icon = styled.div`
-    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
