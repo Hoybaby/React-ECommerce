@@ -68,3 +68,11 @@ export const Right = styled.div`
     flex:1;
     padding: 20px;
 `;
+
+export const ContactItem = styled.div`
+
+`;
+
+export const Payment = styled.img`
+
+`;

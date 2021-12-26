@@ -1,7 +1,7 @@
-import { Facebook, Instagram, Twitter } from '@material-ui/icons';
+import { Facebook, Instagram, MailOutline, Phone, Room, Twitter } from '@material-ui/icons';
 import React from 'react';
 
-import { Center, Container, Description, Left, List, ListItem, Logo, Right, SocialContainer, SocialIcon, Title } from './Footer.styles';
+import { Center, ContactItem, Container, Description, Left, List, ListItem, Logo, Payment, Right, SocialContainer, SocialIcon, Title } from './Footer.styles';
 
 const Footer = () => {
     return (
@@ -40,7 +40,14 @@ const Footer = () => {
                     
                 </List>
             </Center>
-            <Right></Right>
+            <Right>
+                <Title> Contact </Title>
+                <ContactItem> <Room/> New York, United States</ContactItem>
+                <ContactItem><Phone/> +1 234 567 7890</ContactItem>
+                <ContactItem><MailOutline/> mbartek436@gmail.com</ContactItem>
+                <ContactItem></ContactItem>
+                <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
+            </Right>
         </Container>
     )
 }
