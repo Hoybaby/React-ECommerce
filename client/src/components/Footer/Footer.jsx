@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Twitter } from '@material-ui/icons';
 import React from 'react';
 
-import { Container, Description, Left, Logo, SocialContainer, SocialIcon } from './Footer.styles';
+import { Center, Container, Description, Left, Logo, Right, SocialContainer, SocialIcon } from './Footer.styles';
 
 const Footer = () => {
     return (
@@ -24,8 +24,11 @@ const Footer = () => {
                         <Twitter/>
                     </SocialIcon>
                 </SocialContainer>
-                
             </Left>
+            <Center>
+                
+            </Center>
+            <Right></Right>
         </Container>
     )
 }

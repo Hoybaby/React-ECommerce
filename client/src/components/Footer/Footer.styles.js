@@ -42,8 +42,14 @@ export const SocialIcon = styled.div`
 
 export const Center = styled.div`
     flex:1;
+    padding: 20px;
+`;
+
+export const Title = styled.h1`
+
 `;
 // -------------------------------------------right-------------------------------------------
 export const Right = styled.div`
     flex:1;
+    padding: 20px;
 `;
