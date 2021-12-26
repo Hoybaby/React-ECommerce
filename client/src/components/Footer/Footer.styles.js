@@ -71,8 +71,12 @@ export const Right = styled.div`
 
 export const ContactItem = styled.div`
 
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 `;
 
 export const Payment = styled.img`
 
+    width: 50%;
 `;

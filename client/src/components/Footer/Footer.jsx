@@ -42,9 +42,9 @@ const Footer = () => {
             </Center>
             <Right>
                 <Title> Contact </Title>
-                <ContactItem> <Room/> New York, United States</ContactItem>
-                <ContactItem><Phone/> +1 234 567 7890</ContactItem>
-                <ContactItem><MailOutline/> mbartek436@gmail.com</ContactItem>
+                <ContactItem> <Room style={{marginRight: "10px"}}/> New York, United States</ContactItem>
+                <ContactItem><Phone style={{marginRight: "10px"}}/> +1 234 567 7890</ContactItem>
+                <ContactItem><MailOutline style={{marginRight: "10px"}}/> mbartek436@gmail.com</ContactItem>
                 <ContactItem></ContactItem>
                 <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
             </Right>
