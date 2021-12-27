@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Filter, FilterContainer, FilterText, Option, Title, Select} from './ProductList.styles';
+import {Container, Filter, FilterContainer, FilterText, Option, Title, Select} from './styles/ProductList.styles';
 import Navbar from '../components/Navbar/Navbar';
 import Announcement from '../components/Annoucement/Announcement';
 import Products from '../components/Products/Products';
@@ -24,9 +24,6 @@ const ProductList = () => {
                         <Option>Yellow</Option>
                         <Option>Green</Option>
                     </Select>
-                </Filter>
-                <Filter>
-                    <FilterText>Sort Products: </FilterText>
                     <Select>
                         <Option disabled selected>Size</Option>
                         <Option>XS</Option>
@@ -34,6 +31,16 @@ const ProductList = () => {
                         <Option>M</Option>
                         <Option>L</Option>
                         <Option>XL</Option>
+                        
+                    </Select>
+                </Filter>
+                <Filter>
+                    <FilterText>Sort Products: </FilterText>
+                    <Select>
+                        <Option selected>Newest</Option>
+                        <Option>Price (asc)</Option>
+                        <Option>Price (desc)</Option>
+                        
                         
                     </Select>
                 </Filter>
