@@ -22,10 +22,28 @@ export const Image = styled.img`
 
 export const InfoContainer = styled.div`
     flex: 1;
+    padding: 0px 50px;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+    font-weight: 200;
+`;
 
-export const Description = styled.p``;
+export const Description = styled.p`
+    margin: 20px 0;
 
-export const Price = styled.span``;
+`;
+
+export const Price = styled.span`
+
+    font-weight: 100;
+    font-size 40px;
+`;
+
+export const FilterTitle = styled.h3``;
+
+export const FilterColor = styled.div``;
+
+export const FilterSize = styled.div``;
+
+export const FilterSizeOption = styled.option``;

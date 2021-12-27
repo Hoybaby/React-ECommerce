@@ -3,7 +3,8 @@ import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import Newsletter from '../components/Newsletter/Newsletter';
-import { Container, Wrapper, ImgContainer, Image, InfoContainer, Description, Title, Price } from './styles/Product.styles'
+import { Container, Wrapper, ImgContainer, Image, InfoContainer, Description, Title, Price, FilterSizeOption, FilterTitle, FilterSize, FilterColor } from './styles/Product.styles'
+import { Filter, FilterContainer } from './styles/ProductList.styles';
 
 const Product = () => {
     return (
@@ -19,6 +20,24 @@ const Product = () => {
                     <Description>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
                         but also the leap into electronic typesetting, remaining essentially unchanged. </Description>
                     <Price> $20</Price>
+                    <FilterContainer>
+                        <Filter>
+                            <FilterTitle>Color</FilterTitle>
+                            <FilterColor color="black" />
+                            <FilterColor color="darkblue"/>
+                            <FilterColor color="gray"/>
+                        </Filter>
+                        <Filter>
+                            <FilterTitle>Size</FilterTitle>
+                            <FilterSize>
+                                <FilterSizeOption>XS</FilterSizeOption>
+                                <FilterSizeOption>S</FilterSizeOption>
+                                <FilterSizeOption>M</FilterSizeOption>
+                                <FilterSizeOption>L</FilterSizeOption>
+                                <FilterSizeOption>XL</FilterSizeOption>
+                            </FilterSize>
+                        </Filter>
+                    </FilterContainer>
                 </InfoContainer>
             </Wrapper>
             <Newsletter/>
