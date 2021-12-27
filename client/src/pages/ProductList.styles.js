@@ -22,3 +22,9 @@ export const FilterText = styled.span`
     font-size: 20px;
     font-weight: 600;
 `;
+
+export const Select = styled.select`
+
+`;
+
+export const Option = styled.option``;
