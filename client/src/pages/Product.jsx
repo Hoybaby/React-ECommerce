@@ -1,3 +1,5 @@
+
+import { Add, Remove } from '@material-ui/icons';
 import React from 'react'
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
@@ -5,7 +7,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Newsletter from '../components/Newsletter/Newsletter';
 import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoContainer, 
     Description, Title, Price, FilterSizeOption, FilterTitle, FilterSize, FilterColor, 
-    AddContainer, AmountContainer, Remove, Add 
+    AddContainer, AmountContainer, Amount, Button 
 } from './styles/Product.styles'
 
 
@@ -44,9 +46,10 @@ const Product = () => {
                     <AddContainer>
                         <AmountContainer>
                             <Remove/>
+                            <Amount>1</Amount>
                             <Add/>
                         </AmountContainer>
-
+                        <Button>ADD TO CART</Button>
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>

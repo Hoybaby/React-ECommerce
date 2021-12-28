@@ -86,3 +86,5 @@ export const Remove = styled.div``;
 export const Add = styled.div``;
 
 export const Amount = styled.span``;
+
+export const Button = styled.button``;
