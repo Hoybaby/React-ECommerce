@@ -77,14 +77,31 @@ padding: 5px;
 
 export const FilterSizeOption = styled.option``;
 
-export const AddContainer = styled.div``;
+export const AddContainer = styled.div`
 
-export const AmountContainer = styled.div``;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-export const Remove = styled.div``;
+`;
 
-export const Add = styled.div``;
+export const AmountContainer = styled.div`
+    display: flex;
+    align-items: center;
+    font-weight: 700;
 
-export const Amount = styled.span``;
+`;
+export const Amount = styled.span`
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    
+`;
 
 export const Button = styled.button``;
