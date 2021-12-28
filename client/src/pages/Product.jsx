@@ -3,8 +3,11 @@ import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import Newsletter from '../components/Newsletter/Newsletter';
-import { Container, Wrapper, ImgContainer, Image, InfoContainer, Description, Title, Price, FilterSizeOption, FilterTitle, FilterSize, FilterColor } from './styles/Product.styles'
-import { Filter, FilterContainer } from './styles/ProductList.styles';
+import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoContainer, 
+    Description, Title, Price, FilterSizeOption, FilterTitle, FilterSize, FilterColor, 
+    AddContainer, AmountContainer, Remove, Add 
+} from './styles/Product.styles'
+
 
 const Product = () => {
     return (
@@ -38,6 +41,13 @@ const Product = () => {
                             </FilterSize>
                         </Filter>
                     </FilterContainer>
+                    <AddContainer>
+                        <AmountContainer>
+                            <Remove/>
+                            <Add/>
+                        </AmountContainer>
+
+                    </AddContainer>
                 </InfoContainer>
             </Wrapper>
             <Newsletter/>
