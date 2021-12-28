@@ -11,10 +11,10 @@ const Register = () => {
                 <Form>
                     <Input placeholder="First Name" />
                     <Input placeholder="Last Name" />
-                    <Input placeholder="username" />
-                    <Input placeholder="email" />
-                    <Input placeholder="password" />
-                    <Input placeholder="confirmPassword" />
+                    <Input placeholder="Username" />
+                    <Input placeholder="Email" />
+                    <Input placeholder="Password" />
+                    <Input placeholder="Confirm Password" />
                     <Agreement>
                         By clicking Register, you agree to our Terms, Data Policy and Cookies Policy.
                     </Agreement>
