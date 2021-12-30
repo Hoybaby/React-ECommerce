@@ -28,7 +28,19 @@ export const TopButton = styled.button`
     padding: 10px;
     font-weight: 600;
     cursor: pointer;
+    border: ${props => props.type === "filled" && "none"};
+    background-color: ${props => props.type === "filled" ? "black" : "transparent"};
+    color: ${props => props.type === "filled" && "white"};
 `;
+
+export const TopTexts = styled.div``;
+
+export const TopText= styled.span`
+    text-decoration: underline;
+    cursor:pointer;
+    margin: 0 10px;
+`;
+
 
 
 
