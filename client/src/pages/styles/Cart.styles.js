@@ -5,10 +5,31 @@ export const Container = styled.div`
 
 `;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
 
-export const Title = styled.h1``;
+    padding: 20px;
+`;
 
-export const Top = styled.div``;
+export const Title = styled.h1`
 
-export const Bot = styled.div``;
+    font-weight: 300;
+    text-align: center;
+`;
+
+export const Top = styled.div`
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const TopButton = styled.button`
+
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+`;
+
+
+
+export const Bottom = styled.div``;

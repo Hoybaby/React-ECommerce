@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bot, Container, Title, Top, Wrapper } from './styles/Cart.styles'
+import { Bottom, Container, Title, Top, TopButton, Wrapper } from './styles/Cart.styles'
 import Navbar from '../components/Navbar/Navbar';
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
@@ -11,8 +11,11 @@ const Cart = () => {
             <Announcement />
             <Wrapper>
                 <Title>Your Bag</Title>
-                <Top></Top>
-                <Bot></Bot>
+                <Top>
+                    <TopButton>Continue Shopping</TopButton>
+                    <TopButton>Checkout Now</TopButton> 
+                </Top>
+                <Bottom></Bottom>
             </Wrapper>
             <Footer />
         </Container>
