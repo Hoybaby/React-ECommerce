@@ -60,14 +60,55 @@ export const Summary = styled.div`
     
 `;
 
-export const Product = styled.div``;
+export const Product = styled.div`
+    display: flex;
+    justify-content: space-between;
 
-export const ProductDetail = styled.div``;
+`;
 
-export const PriceDetail = styled.div``;
+export const ProductDetail = styled.div`
+    display: flex;
+    flex: 2;
+`;
 
-export const Image = styled.img``;
+export const PriceDetail = styled.div`
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+`;
+
+export const Image = styled.img`
+
+    width: 200px;
+`;
 
 export const ProductName = styled.span``;
 
-export const Details = styled.div``;
+export const Details = styled.div`
+
+    display:flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+`;
+
+export const ProductId = styled.span``;
+
+export const ProductColor = styled.div`
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: ${props => props.color};
+`;
+
+export const ProductSize = styled.span``;
+
+export const ProductAmountContainer = styled.span``;
+
+export const ProductAmount = styled.span``;
+
+export const ProductPrice = styled.div``;
