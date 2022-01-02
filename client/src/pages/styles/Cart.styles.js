@@ -21,6 +21,7 @@ export const Top = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20ppx;
 `;
 
 export const TopButton = styled.button`
@@ -41,7 +42,32 @@ export const TopText= styled.span`
     margin: 0 10px;
 `;
 
+export const Bottom = styled.div`
+    display: flex;
+    justify-content: space-between;
 
+`;
 
+export const Info = styled.div`
+/* flex 3 makes it 3/4 of the page */
+    flex:3;
+    
 
-export const Bottom = styled.div``;
+`;
+
+export const Summary = styled.div`
+    flex:1;
+    
+`;
+
+export const Product = styled.div``;
+
+export const ProductDetail = styled.div``;
+
+export const PriceDetail = styled.div``;
+
+export const Image = styled.img``;
+
+export const ProductName = styled.span``;
+
+export const Details = styled.div``;
