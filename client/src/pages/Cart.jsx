@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bottom, Container, Details, Image, Info, PriceDetail, Product, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductSize, Summary, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles/Cart.styles'
+import { Bottom, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductPrice, ProductSize, Summary, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles/Cart.styles'
 import Navbar from '../components/Navbar/Navbar';
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
@@ -39,6 +39,26 @@ const Cart = () => {
                                     <Remove/>
                                 </ProductAmountContainer>
                                 <ProductPrice> $30</ProductPrice>
+                            </PriceDetail>
+                        </Product>
+                        <Hr/>
+                        <Product>
+                            <ProductDetail>
+                            <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+                                <Details>
+                                    <ProductName><b>Product:</b> Graphic Tee</ProductName>
+                                    <ProductId><b>ID:</b> 86521863 </ProductId>
+                                    <ProductColor color ="grey"/>
+                                    <ProductSize><b>Size:</b> M</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                            <PriceDetail>
+                                <ProductAmountContainer>
+                                    <Add/>
+                                    <ProductAmount>2</ProductAmount>
+                                    <Remove/>
+                                </ProductAmountContainer>
+                                <ProductPrice> $25</ProductPrice>
                             </PriceDetail>
                         </Product>
                     </Info>

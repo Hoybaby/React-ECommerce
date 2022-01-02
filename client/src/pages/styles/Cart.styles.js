@@ -55,6 +55,13 @@ export const Info = styled.div`
 
 `;
 
+export const Hr = styled.hr`
+
+    background-color: #eee;
+    border: none;
+    height: 1px;
+`;
+
 export const Summary = styled.div`
     flex:1;
     
@@ -80,20 +87,7 @@ export const PriceDetail = styled.div`
     
 `;
 
-export const Image = styled.img`
-
-    width: 200px;
-`;
-
 export const ProductName = styled.span``;
-
-export const Details = styled.div`
-
-    display:flex;
-    padding: 20px;
-    flex-direction: column;
-    justify-content: space-around;
-`;
 
 export const ProductId = styled.span``;
 
@@ -105,10 +99,39 @@ export const ProductColor = styled.div`
     background-color: ${props => props.color};
 `;
 
-export const ProductSize = styled.span``;
+export const ProductSize = styled.div`
 
-export const ProductAmountContainer = styled.span``;
+    
+`;
 
-export const ProductAmount = styled.span``;
+export const ProductAmountContainer = styled.div`
 
-export const ProductPrice = styled.div``;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+
+export const ProductAmount = styled.div`
+
+    font-size: 24px;
+    margin: 5px;
+`;
+
+export const ProductPrice = styled.div`
+
+    font-size: 30px;
+    font-weight: 200;
+`;
+
+
+export const Image = styled.img`
+
+    width: 200px;
+`;
+export const Details = styled.div`
+
+    display:flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+`;
