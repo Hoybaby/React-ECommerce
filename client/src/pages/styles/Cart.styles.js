@@ -62,10 +62,7 @@ export const Hr = styled.hr`
     height: 1px;
 `;
 
-export const Summary = styled.div`
-    flex:1;
-    
-`;
+
 
 export const Product = styled.div`
     display: flex;
@@ -134,4 +131,36 @@ export const Details = styled.div`
     padding: 20px;
     flex-direction: column;
     justify-content: space-around;
+
 `;
+export const Summary = styled.div`
+    flex:1;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
+`;
+
+export const SummaryTitle = styled.h1`
+
+font-weight: 200;
+
+`;
+
+export const SummaryItem = styled.div`
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: ${props => props.type === "total" && "500"};
+    font-size: ${props => props.type === "total" && "24px"};
+
+`;
+
+export const SummaryItemText = styled.span``;
+
+export const SummaryItemPrice = styled.span``;
+
+
+
+export const Button = styled.button``;
+

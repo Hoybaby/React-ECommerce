@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bottom, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductPrice, ProductSize, Summary, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles/Cart.styles'
+import { Bottom, Button, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductPrice, ProductSize, Summary, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from './styles/Cart.styles'
 import Navbar from '../components/Navbar/Navbar';
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
@@ -63,7 +63,25 @@ const Cart = () => {
                         </Product>
                     </Info>
                     <Summary>
-                        summary
+                        <SummaryTitle>Order Summary</SummaryTitle>
+                            <SummaryItem>
+                                <SummaryItemText>Subtotal</SummaryItemText>
+                                <SummaryItemPrice> $110</SummaryItemPrice>
+                            </SummaryItem>
+                            <SummaryItem>
+                                <SummaryItemText>Estimated Shipping</SummaryItemText>
+                                <SummaryItemPrice> 5.90</SummaryItemPrice>
+                            </SummaryItem>
+                            <SummaryItem>
+                                <SummaryItemText>Shiping Discount</SummaryItemText>
+                                <SummaryItemPrice> -5.90</SummaryItemPrice>
+                            </SummaryItem>
+                            <SummaryItem type="total">
+                                <SummaryItemText >Total</SummaryItemText>
+                                <SummaryItemPrice> 110</SummaryItemPrice>
+                            </SummaryItem>
+                        <Button>Check Out Now</Button>
+                
                     </Summary>
                 </Bottom>
             </Wrapper>
