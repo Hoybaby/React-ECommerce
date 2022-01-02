@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
+import { mobile } from '../../responsive';
+
 
 export const Container = styled.div`
     height: 60px;
     /* background-color: black; */
-`
+    ${mobile({backgroundColor: "red"})};
+`;
 
 export const Wrapper = styled.div`
     padding: 10px 20px;
