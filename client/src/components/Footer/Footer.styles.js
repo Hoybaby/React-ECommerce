@@ -70,6 +70,7 @@ export const ListItem = styled.li`
 export const Right = styled.div`
     flex:1;
     padding: 20px;
+    ${mobile({backgroundColor: "#eee"})}
 `;
 
 export const ContactItem = styled.div`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from '../../responsive';
 
 export const Container = styled.div`
 
@@ -21,7 +22,7 @@ export const Top = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20ppx;
+    padding: 20px;
 `;
 
 export const TopButton = styled.button`
