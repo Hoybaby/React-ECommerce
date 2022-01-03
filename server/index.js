@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoute = require("./routes/users");
 
+app.use(express.json());
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.get("/api/test", () => {
 })
 
 // to test, the person needs to type localhost:5000/api/user/usertest
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 
 
 
