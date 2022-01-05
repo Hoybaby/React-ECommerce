@@ -31,15 +31,19 @@ router.post('/login', async (req,res) => {
     try {
         // this will search the database to look for the username that i am posting in postman.
         const user = await User.findOne({username: req.body.username});
-        !user && res.status(404).json({message: "User not found"});
+        !user && res.status(404).json({message: "User not found, wrong credentials"});
 
         const hashPassword = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
 
-        const password = hashPassword.toString(CryptoJS.enc.Utf8);
+        const firstPassword = hashPassword.toString(CryptoJS.enc.Utf8);
 
-        password !== req.body.password && res.status(401).json("wrong cedentials");
+        firstPassword !== req.body.password && res.status(401).json({message: "wrong password"});
 
-        res.status(200).json(user);
+        // trying to hide the password from anybody so they cant see it at all
+
+        const {password, ...others} = user._doc;
+
+        res.status(200).json(others);
 
     } catch(err) {
         res.status(500).json(err);
