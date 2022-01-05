@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const CryptoJS = require("crypto-js");
-// const dotenv = require('dotenv');
-// dotenv.config();
-
+const jwt = require('jsonwebtoken');
 // register
 router.post('/register', async (req, res) => {
 
@@ -41,9 +39,19 @@ router.post('/login', async (req,res) => {
 
         // trying to hide the password from anybody so they cant see it at all
 
+        const accessToken = jwt.sign({
+            id: user._id,
+            isAdmin: user.isAdmin,
+            }, 
+            // using a different secret key for the token with SK being secret key.
+            process.env.JWT_SK,
+            {expiresIn: '12h'}
+        
+        );
+
         const {password, ...others} = user._doc;
 
-        res.status(200).json(others);
+        res.status(200).json({others, accessToken});
 
     } catch(err) {
         res.status(500).json(err);
