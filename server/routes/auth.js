@@ -55,6 +55,7 @@ router.post('/login', async (req,res) => {
 
         const {password, ...others} = user._doc;
 
+        // before didnt have the ...others
         res.status(200).json({...others, accessToken});
 
     } catch(err) {
