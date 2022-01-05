@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const User = require('../models/User');
+const CryptoJS = require("crypto-js");
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 // register
 router.post('/register', async (req, res) => {
@@ -7,7 +10,8 @@ router.post('/register', async (req, res) => {
     const newUser = new User({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
+        // according to the documentation, the password is encrypted is needed with this
+        password: CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString(),
         
     });
 

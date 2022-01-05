@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const orderSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
 
     userId: {type: String, required: true},
     products: [
@@ -30,4 +30,4 @@ const orderSchema = new mongoose.Schema({
 },{timestamps: true}
 );
 
-module.export = mongoose.model("Order", orderSchema);
+module.export = mongoose.model("Order", OrderSchema);
