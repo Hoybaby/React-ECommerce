@@ -1,6 +1,6 @@
 
 const User = require("../models/User");
-const {verifyToken, verifyTokenAndAuthorization} = require('./verifyToken');
+const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} = require('./verifyToken');
 const router = require('express').Router();
 
 
@@ -23,6 +23,18 @@ router.put('/:id', verifyTokenAndAuthorization, async(req, res) => {
         res.status(200).json(updatedUser);
     } catch(err) {
         res.status(500).json({message: "Something went wrong in updating the user"});
+    }
+})
+
+// delete user
+router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
+
+
+    try {
+        await User.findByIdAndDelete(req.params.id);
+        res.status(200).json({message: "User deleted"});
+    } catch(err) {
+        res.status(500).json({message: "Something went wrong in deleting the user"});
     }
 })
 
