@@ -25,5 +25,28 @@ router.post('/register', async (req, res) => {
     
 });
 
+router.post('/login', async (req,res) => {
+
+
+    try {
+        // this will search the database to look for the username that i am posting in postman.
+        const user = await User.findOne({username: req.body.username});
+        !user && res.status(404).json({message: "User not found"});
+
+        const hashPassword = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
+
+        const password = hashPassword.toString(CryptoJS.enc.Utf8);
+
+        password !== req.body.password && res.status(401).json("wrong cedentials");
+
+        res.status(200).json(user);
+
+    } catch(err) {
+        res.status(500).json(err);
+    }
+    
+
+
+})
 
 module.exports = router;

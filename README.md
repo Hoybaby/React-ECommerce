@@ -16,3 +16,15 @@ Process
 <h1>Products</h1>
 
 <p>Was able to find pictures that would be able to display my "products" onto the webpage. Finding the right images help and I will user a similar process with the categories components with this. I will create a general component that will have another component that will cycle through the JavaScript object.<p>
+
+
+
+
+
+
+Backend
+
+<p>First I wanted to create a new brance so I can host all the work thats related to the backend in this seperate branch. This also prevents me from pushing code that might not work with the main branch so it safeguards my already working code. First I had to do an npm init -y to get the basic packages then install some packages with npm i. The packages I used at the moment are (mongoose, dotenv, express and nodemon). After installing all the packages, it is best to create a simple server with express which doesn't take a lot of lines to code. When succesfull i can create the mongoDB connection which as well, doesn't take long to make. IT IS IMPORTANT to hide the connection information to prevent others in getting access to information that can be tricky. This is done with the package dotenv which enables the application to use the hidden information in a ".env" file which is an enviromental variable on my machine.</p>
+
+
+<p>After creating the connection to mongoose, I want to set up the models for all the CRUD application I will be doing first. This can be done with by making a models folder and then creating a file that will first import mongoose then use " new mongoose schema". If done correctly, it can be testied with the postman to the endpoint I created early for "auth". The auth enpoint will take in the data I used from postman and send it through the schema which in then sent to my database collection. Before I was running into an error and I noticed that I was not exporting the module correct and had a typo.</p>

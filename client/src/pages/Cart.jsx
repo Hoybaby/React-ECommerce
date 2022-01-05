@@ -85,7 +85,7 @@ const Cart = () => {
                     </Summary>
                 </Bottom>
             </Wrapper>
-            <Footer color="black"/>
+            <Footer />
         </Container>
     )
 }
