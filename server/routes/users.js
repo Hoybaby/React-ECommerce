@@ -39,17 +39,17 @@ router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
 })
 
 // get all users
-router.get('/find/:id', verifyTokenAndAdmin, async(req, res) => {
+router.get('/', verifyTokenAndAdmin, async(req, res) => {
 
 
     try {
 
-        const user = await User.findById(req.params.id);
+        const users = await User.find(req.params.id);
 
-        const { password, ...others} = user._doc;
-        res.status(200).json({...others});
+        res.status(200).json(users);
+        // res.status(200).json({...others});
     } catch(err) {
-        res.status(500).json({message: "Something went wrong in deleting the user"});
+        res.status(500).json({message: "Something went wrong in getting the user"});
     }
 })
 
