@@ -87,41 +87,5 @@ router.get('/',  async(req, res) => {
 })
 
 
-// // get user stats
-// router.get('/stats', verifyTokenAndAdmin, async(req, res) => {
-
-//     const date = new Date();
-//     const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
-
-//     try {
-
-//         // using mongodb
-//         const data = await User.aggregate([
-//             // greater then
-//             {$match: {createdAt: {$gte: lastYear}}},
-//             {
-//                 // a user is created at x date, it will assain to this month
-//                 $project: {
-//                     month: {$month: "$createdAt"},
-//                 },
-//             },
-//             // will be grouping the users by month
-//             {
-//                 // group by month
-//                 $group: {
-//                     _id: "$month",
-//                     // the sum 1 will register every user
-//                     total: {$sum: 1}
-//                 },
-//             },
-//         ]);
-
-//         res.status(200).json(data);
-
-//     } catch(err) {
-//         res.status(500).json({message: "Something went wrong in getting the user stats"});
-//     }
-// })
-
 
 module.exports = router;
