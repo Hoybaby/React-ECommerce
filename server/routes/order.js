@@ -4,7 +4,7 @@ const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} = require(
 const router = require('express').Router();
 
 // 
-router.post("/", verifyTokenAndAdmin, async(req, res) => {
+router.post("/", verifyToken, async(req, res) => {
     const newOrder = new Order(req.body)
 
     try{
@@ -100,7 +100,7 @@ router.get('/income', verifyTokenAndAdmin, async(req,res) => {
                 },
             },
         ]);
-        res.send(income);
+        res.status(200).json(income);
 
     } catch(err) {
         res.status(500).json({message: "Something went wrong in getting the profit"});
