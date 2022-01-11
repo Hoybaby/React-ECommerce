@@ -15,8 +15,6 @@ router.post("/", verifyTokenAndAdmin, async(req, res) => {
     }
 });
 
-
-
 router.put('/:id', verifyTokenAndAuthorization, async(req, res) => {
     // since we assigned req.user in the verify token, we can access it here.
 
@@ -30,36 +28,51 @@ router.put('/:id', verifyTokenAndAuthorization, async(req, res) => {
         
         res.status(200).json(updatedProduct);
     } catch(err) {
-        res.status(500).json({message: "Something went wrong in updating the user"});
+        res.status(500).json({message: "Something went wrong in updating the product"});
     }
 })
 
 // // delete user
-// router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
+router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
 
 
-//     try {
-//         await User.findByIdAndDelete(req.params.id);
-//         res.status(200).json({message: "User deleted"});
-//     } catch(err) {
-//         res.status(500).json({message: "Something went wrong in deleting the user"});
-//     }
-// })
+    try {
+        await Product.findByIdAndDelete(req.params.id);
+        res.status(200).json({message: "Product deleted"});
+    } catch(err) {
+        res.status(500).json({message: "Something went wrong in deleting the product"});
+    }
+})
 
-// // get all users
-// router.get('/', verifyTokenAndAdmin, async(req, res) => {
+// // get product
+router.get('/find/:id',  async(req, res) => {
 
 
-//     try {
+    try {
 
-//         const users = await User.find(req.params.id);
+        const product = await Product.find(req.params.id);
 
-//         res.status(200).json(users);
-//         // res.status(200).json({...others});
-//     } catch(err) {
-//         res.status(500).json({message: "Something went wrong in getting the user"});
-//     }
-// })
+        res.status(200).json(product);
+        // res.status(200).json({...others});
+    } catch(err) {
+        res.status(500).json({message: "Something went wrong in getting the product"});
+    }
+})
+
+router.get('/',  async(req, res) => {
+
+    const qNew = req.query.new;
+    const qCatefory = req.query.category;
+
+    try {
+        const ysers = query 
+        ? await Product.find().sort({_id: -1}).limit(5) 
+        : await Product.find();
+
+    } catch (err) {
+        res.status(500).json({message: "Something went wrong in getting the products"});
+    }
+})
 
 
 // // get user stats
