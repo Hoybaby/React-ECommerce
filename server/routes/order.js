@@ -89,9 +89,10 @@ router.get('/income', verifyTokenAndAdmin, async(req,res) => {
             {$match: {createdAt: {$gte: previousMonth}}},
             {
                 $project: {
-                    month: "$createdAt"},
+                    month: {$month :"$createdAt"},
                     // in ourder Order.js, we have the amount field.
                     sales: "$amount",
+                },
             },
             {
                 $group: {
@@ -105,7 +106,7 @@ router.get('/income', verifyTokenAndAdmin, async(req,res) => {
     } catch(err) {
         res.status(500).json({message: "Something went wrong in getting the profit"});
     }
-})
+});
 
 
 module.exports = router;
