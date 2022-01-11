@@ -74,5 +74,39 @@ router.get('/', verifyTokenAndAdmin, async(req,res) => {
     }
 })
 
+// this will calcuate all the order profit.
+router.get('/income', verifyTokenAndAdmin, async(req,res) => {
+    // i only want to calcuate within the one month so it will be very similar to he user.js stats
+
+    const date = new Date();
+    const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+    // below will calcuate the profit of the two months
+    const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
+
+    // using the aggregate method that is using mongoose
+    try {
+        const income  = await Order.aggregate([
+            {$match: {createdAt: {$gte: previousMonth}}},
+            {
+                $project: {
+                    month: "$createdAt"},
+                    // in ourder Order.js, we have the amount field.
+                    sales: "$amount",
+            },
+            {
+                $group: {
+                    _id : "$month",
+                    total: {$sum: "$sales"}
+                },
+            },
+        ]);
+        res.send(income);
+
+    } catch(err) {
+        res.status(500).json({message: "Something went wrong in getting the profit"});
+    }
+})
+
+
 module.exports = router;
 
