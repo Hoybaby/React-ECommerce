@@ -34,7 +34,7 @@ router.put('/:id', verifyTokenAndAdmin, async(req, res) => {
     }
 })
 
-// // delete user
+// DELETE user
 router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
 
 
@@ -46,8 +46,8 @@ router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
     }
 })
 
-// // get user Orders
-router.get('/find/:userId',  async(req, res) => {
+// // GET USER Orders
+router.get('/find/:userId', verifyTokenAndAuthorization,  async(req, res) => {
 
 
     try {
@@ -61,7 +61,7 @@ router.get('/find/:userId',  async(req, res) => {
     }
 })
 
-// get all orders
+// GET ALL ORDERs
 
 router.get('/', verifyTokenAndAdmin, async(req,res) => {
     try {
@@ -89,7 +89,7 @@ router.get('/income', verifyTokenAndAdmin, async(req,res) => {
             {$match: {createdAt: {$gte: previousMonth}}},
             {
                 $project: {
-                    month: {$month :"$createdAt"},
+                    month: {$month : "$createdAt"},
                     // in ourder Order.js, we have the amount field.
                     sales: "$amount",
                 },
@@ -101,7 +101,7 @@ router.get('/income', verifyTokenAndAdmin, async(req,res) => {
                 },
             },
         ]);
-        res.status(200).json(income);
+        res.status(200).json({message: "is working", income});
 
     } catch(err) {
         res.status(500).json({message: "Something went wrong in getting the profit"});

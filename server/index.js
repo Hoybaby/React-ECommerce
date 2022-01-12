@@ -28,7 +28,7 @@ app.get("/api/test", () => {
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
-app.use("/cart", cartRoute);
+app.use("/api/cart", cartRoute);
 app.use("/api/orders", orderRoute);
 
 app.listen(process.env.PORT || 5000, () => {

@@ -89,7 +89,7 @@ router.get('/',  async(req, res) => {
     }
 })
 
-// get all products 
+// GET ALL
 router.get('/', verifyTokenAndAdmin, async(req,res) => {
     try {
 
