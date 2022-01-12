@@ -11,14 +11,14 @@ const Navbar = () => {
             <Container>
                 <Wrapper>   
                     <Left> 
-                        <Language> English</Language>
+                        <Language> En</Language>
                         <SearchContainer>
-                            <Input/>
+                            <Input placeholder="Search"/>
                             <Search style={{color: "gray", fontSize: "16px"}}/>
                         </SearchContainer>
                     </Left>
                     <Center> 
-                        <Logo> Hoybaby's Shop </Logo>
+                        <Logo> Hoy. </Logo>
                     </Center>
                     <Right> 
                         <MenuItem>Register</MenuItem>
