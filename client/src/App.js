@@ -1,14 +1,16 @@
 
 import './App.css';
+import React from "react";
+
 import Home from './pages/Home';
 // import ProductList from './pages/ProductList';
 // import Product from './pages/Product';
 // import Register from './pages/Register';
 // import Login from './pages/Login';
-import Cart from './pages/Cart'
+// import Cart from './pages/Cart'
 import {
     BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
     
 } from "react-router-dom";
@@ -16,11 +18,11 @@ import {
 function App() {
     return 
     <Router>
-        <Switch>
-            <Route>
+        <Routes>
+            <Route path="/">
                 <Home/>
             </Route>;
-        </Switch>
+        </Routes>
     </Router>
 }
 
