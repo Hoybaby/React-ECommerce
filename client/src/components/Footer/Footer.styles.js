@@ -19,7 +19,7 @@ export const Logo = styled.h1`
 
 `;
 
-export const Description = styled.pattern`
+export const Description = styled.p`
     margin: 20px 0;
 
     `;
