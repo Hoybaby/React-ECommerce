@@ -13,7 +13,7 @@ const ProductList = () => {
 
     const category = location.pathname.split('/')[2];
 
-    const [ filter, setFilters] =useState({})
+    const [ filters, setFilters] =useState({})
     const [ sort, setSort] =useState("newest");
 
     const handleFilters = (e) => {
@@ -21,12 +21,12 @@ const ProductList = () => {
         const value = e.target.value;
         setFilters({
             // takes the event and assign it to value
-            ...filter,
+            ...filters,
             [e.target.name]: value
         });
     }
     
-    console.log(filter)
+    // console.log(filters)
 
     return (
         <Container>
@@ -66,7 +66,7 @@ const ProductList = () => {
                     </Select>
                 </Filter>
             </FilterContainer>
-            <Products/>
+            <Products category={category} filters={filters} sort={sort}/>
             <Newsletter/>
             <Footer/>
 

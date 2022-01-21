@@ -4,7 +4,8 @@ import { popularProducts } from "../../data/data";
 import Product from '../Product/Product';
 
 
-const Products = () => {
+const Products = ({category, sort, filters}) => {
+    console.log(category, sort, filters)
     return (
         <Container>
             {popularProducts.map((item) => (
