@@ -14,7 +14,17 @@ const ProductList = () => {
     const category = location.pathname.split('/')[2];
 
     const [ filter, setFilters] =useState({})
+
+    const handleFilters = (e) => {
+        // this is selecteing what is being selected
+        const value = e.target.value;
+        setFilters({
+            // takes the event and assign it to value
+            [e.target.name]: value
+        });
+    }
     
+    console.log(filter)
 
     return (
         <Container>
@@ -24,7 +34,7 @@ const ProductList = () => {
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products: </FilterText>
-                    <Select>
+                    <Select name="color" onChange={handleFilters} >
                         <Option disabled >Color</Option>
                         <Option>White</Option>
                         <Option>Black</Option>
@@ -33,7 +43,7 @@ const ProductList = () => {
                         <Option>Yellow</Option>
                         <Option>Green</Option>
                     </Select>
-                    <Select>
+                    <Select name="size" onChange={handleFilters}>
                         <Option disabled >Size</Option>
                         <Option>XS</Option>
                         <Option>S</Option>
