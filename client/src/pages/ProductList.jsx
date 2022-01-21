@@ -14,12 +14,14 @@ const ProductList = () => {
     const category = location.pathname.split('/')[2];
 
     const [ filter, setFilters] =useState({})
+    const [ sort, setSort] =useState("newest");
 
     const handleFilters = (e) => {
         // this is selecteing what is being selected
         const value = e.target.value;
         setFilters({
             // takes the event and assign it to value
+            ...filter,
             [e.target.name]: value
         });
     }
@@ -55,10 +57,10 @@ const ProductList = () => {
                 </Filter>
                 <Filter>
                     <FilterText>Sort Products: </FilterText>
-                    <Select>
-                        <Option selected>Newest</Option>
-                        <Option>Price (asc)</Option>
-                        <Option>Price (desc)</Option>
+                    <Select onChange={e=> setSort(e.target.value)}>
+                        <Option value="newest">Newest</Option>
+                        <Option value="asc">Price (asc)</Option>
+                        <Option value="desc">Price (desc)</Option>
                         
                         
                     </Select>
