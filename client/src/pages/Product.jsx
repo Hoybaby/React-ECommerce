@@ -10,6 +10,7 @@ import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoC
     AddContainer, AmountContainer, Amount, Button 
 } from './styles/Product.styles'
 
+// have to take in the props from the ProductList.jsx
 
 const Product = () => {
     return (
