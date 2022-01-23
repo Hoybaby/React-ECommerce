@@ -28,7 +28,7 @@ router.put('/:id', verifyTokenAndAuthorization, async(req, res) => {
         
         res.status(200).json(updatedProduct);
     } catch(err) {
-        res.status(500).json({message: "Something went wrong in updating the product"});
+        res.status(500).json({message: "Something went wrong in updating the product in product.js"});
     }
 })
 
@@ -55,7 +55,7 @@ router.get('/find/:id',  async(req, res) => {
         res.status(200).json(product);
         // res.status(200).json({...others});
     } catch(err) {
-        res.status(500).json({message: "Something went wrong in getting the product"});
+        res.status(500).json({message: "Something went wrong in getting the product in product.js"});
     }
 })
 

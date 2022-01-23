@@ -1,6 +1,7 @@
 
 import { Add, Remove } from '@material-ui/icons';
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { useLocation } from 'react-router-dom';
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
@@ -10,16 +11,40 @@ import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoC
     AddContainer, AmountContainer, Amount, Button 
 } from './styles/Product.styles'
 
+import {publicRequest} from '../requestMethods';
 // have to take in the props from the ProductList.jsx
 
 const Product = () => {
+
+    const location = useLocation();
+
+    // this category component will be passed as a prop later to tell the products component what category to display  
+    const id = location.pathname.split('/')[2];
+
+    const [product , setProduct] = useState({});
+
+    useEffect(( ) => {
+
+        const getProduct = async() => {
+            try {
+                const res = await publicRequest.get("/products/find/" + id);
+                setProduct(res.data);
+            } catch {
+
+            }
+
+        }
+        getProduct();
+        // when id changes, it will invoke the datta
+    }, [id])
+
     return (
         <Container>
             <Navbar/>
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg"/>
+                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg"  />
                 </ImgContainer>
                 <InfoContainer>
                     <Title>Denim Jumpsuit</Title>
