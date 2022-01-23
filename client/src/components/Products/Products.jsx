@@ -38,7 +38,19 @@ const Products = ({category, sort, filters}) => {
             products.filter((item) => Object.entries(filters).every(([key, value]) => item[key].includes(value)))
         )
 
-    } , [products, category, filters])
+    } , [products, category, filters]);
+
+    useEffect(()=> {
+        if(sort ==="newest") {
+            setFilteredProducts(prev => 
+                // this will displasy the newest products first
+                [...prev].sort((a,b) => a.createdAt - b.createdAt));
+        } else if ( sort === "asc") {
+            setFilteredProducts(prev => 
+                // going to sort from price
+                [...prev].sort((a,b) => b.price - a.price));
+        }
+    }, [sort]);
 
 
     return (
