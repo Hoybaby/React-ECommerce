@@ -48,6 +48,10 @@ const Products = ({category, sort, filters}) => {
         } else if ( sort === "asc") {
             setFilteredProducts(prev => 
                 // going to sort from price
+                [...prev].sort((a,b) => a.price - b.price));
+        } else {
+            setFilteredProducts(prev => 
+                // going to sort from price
                 [...prev].sort((a,b) => b.price - a.price));
         }
     }, [sort]);
