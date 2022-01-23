@@ -50,7 +50,7 @@ router.get('/find/:id',  async(req, res) => {
 
     try {
 
-        const product = await Product.find(req.params.id);
+        const product = await Product.findById(req.params.id);
 
         res.status(200).json(product);
         // res.status(200).json({...others});

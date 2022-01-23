@@ -44,7 +44,8 @@ const Product = () => {
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg"  />
+                {/* imate of jeans before https://i.ibb.co/S6qMxwr/jean.jpg */}
+                    <Image src={product.img}  />
                 </ImgContainer>
                 <InfoContainer>
                     <Title>Denim Jumpsuit</Title>
