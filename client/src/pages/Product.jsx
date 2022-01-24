@@ -23,6 +23,8 @@ const Product = () => {
 
     const [product , setProduct] = useState({});
 
+    const [quantity, setQuantity] = useState(1);
+
     useEffect(( ) => {
 
         const getProduct = async() => {
@@ -38,6 +40,14 @@ const Product = () => {
         // when id changes, it will invoke the datta
     }, [id])
 
+    const handleQuantity = (type) => {
+        if(type === 'dec') {
+            setQuantity(quantity - 1);
+        } else {
+            setQuantity(quantity + 1);
+        }
+    }
+
     return (
         <Container>
             <Navbar/>
@@ -48,10 +58,9 @@ const Product = () => {
                     <Image src={product.img}  />
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>Denim Jumpsuit</Title>
-                    <Description>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-                        but also the leap into electronic typesetting, remaining essentially unchanged. </Description>
-                    <Price> $20</Price>
+                    <Title>{product.title}</Title>
+                    <Description>{product.desc}</Description>
+                    <Price>{product.price}</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
@@ -72,9 +81,9 @@ const Product = () => {
                     </FilterContainer>
                     <AddContainer>
                         <AmountContainer>
-                            <Remove/>
-                            <Amount>1</Amount>
-                            <Add/>
+                            <Remove onClick={() => handleQuantity("dec")}/>
+                            <Amount>{quantity}</Amount>
+                            <Add onClick={() => handleQuantity("inc")}/>
                         </AmountContainer>
                         <Button>ADD TO CART</Button>
                     </AddContainer>
