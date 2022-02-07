@@ -11,6 +11,8 @@ import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoC
     AddContainer, AmountContainer, Amount, Button 
 } from './styles/Product.styles'
 
+import axios from 'axios';
+
 import {publicRequest} from '../requestMethods';
 // have to take in the props from the ProductList.jsx
 
@@ -24,6 +26,10 @@ const Product = () => {
     const [product , setProduct] = useState({});
 
     const [quantity, setQuantity] = useState(1);
+
+    const [size, setSize] = useState('');
+
+    const [color, setColor] = useState('');
 
     useEffect(( ) => {
 
@@ -42,10 +48,16 @@ const Product = () => {
 
     const handleQuantity = (type) => {
         if(type === 'dec') {
-            setQuantity(quantity - 1);
+            // this makes sure it cant go lower than 1
+            quantity > 1 && setQuantity(quantity - 1);
         } else {
             setQuantity(quantity + 1);
         }
+    }
+
+    const handleClick = () => {
+        // update cart
+        // axios.post
     }
 
     return (
@@ -60,17 +72,17 @@ const Product = () => {
                 <InfoContainer>
                     <Title>{product.title}</Title>
                     <Description>{product.desc}</Description>
-                    <Price>{product.price}</Price>
+                    <Price>${product.price}</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
-                            <FilterColor color="black" />
-                            <FilterColor color="darkblue"/>
-                            <FilterColor color="gray"/>
+                            <FilterColor color="black"  onClick={() => setColor("black")}/>
+                            <FilterColor color="darkblue" onClick={() => setColor("darkblue")}/>
+                            <FilterColor color="gray" onClick={() => setColor("gray")}/>
                         </Filter>
                         <Filter>
                             <FilterTitle>Size</FilterTitle>
-                            <FilterSize>
+                            <FilterSize onChange={(e) => setSize(e.target.value)}>
                                 <FilterSizeOption>XS</FilterSizeOption>
                                 <FilterSizeOption>S</FilterSizeOption>
                                 <FilterSizeOption>M</FilterSizeOption>
@@ -85,7 +97,7 @@ const Product = () => {
                             <Amount>{quantity}</Amount>
                             <Add onClick={() => handleQuantity("inc")}/>
                         </AmountContainer>
-                        <Button>ADD TO CART</Button>
+                        <Button onClick={handleClick}>ADD TO CART</Button>
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
