@@ -11,9 +11,9 @@ import { Container, Filter, FilterContainer, Wrapper, ImgContainer, Image, InfoC
     AddContainer, AmountContainer, Amount, Button 
 } from './styles/Product.styles'
 
-import axios from 'axios';
-
 import {publicRequest} from '../requestMethods';
+import { addProduct } from '../redux/cartRedux';
+import {useDispatch} from 'react-redux';
 // have to take in the props from the ProductList.jsx
 
 const Product = () => {
@@ -30,6 +30,8 @@ const Product = () => {
     const [size, setSize] = useState('');
 
     const [color, setColor] = useState('');
+
+    const dispatch = useDispatch();
 
     useEffect(( ) => {
 
@@ -57,8 +59,12 @@ const Product = () => {
 
     const handleClick = () => {
         // update cart
-        // axios.post
-    }
+        // need to dispatch action. it doesnt know what to do with the action
+        dispatch(
+            addProduct({product, quantity})
+        )
+        
+    };
 
     return (
         <Container>
