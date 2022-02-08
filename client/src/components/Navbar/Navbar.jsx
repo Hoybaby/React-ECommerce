@@ -2,10 +2,16 @@ import React from 'react'
 import { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Right, Logo, MenuItem } from './Navbar.styles';
 import {Search, ShoppingCartOutlined} from '@material-ui/icons';
 import Badge from '@material-ui/core/Badge';
+import { useSelector } from 'react-redux';
 
 
 
 const Navbar = () => {
+
+    const quantity = useSelector(state => state.cart.quantity)
+
+    console.log(quantity)
+
     return (
         
             <Container>
