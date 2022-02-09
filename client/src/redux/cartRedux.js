@@ -11,8 +11,9 @@ const cartSlice = createSlice({
         addProduct: (state, action) => {
             // can only be done like this with redux toolkit
             state.quantity += 1;
-            state.products.push(action.payload.product);
-            state.total += action.payload.price;
+            // because we added color and size on the product, we can change it to just payload
+            state.products.push(action.payload);
+            state.total += action.payload.price * action.payload.quantity;
         }
     }
 });

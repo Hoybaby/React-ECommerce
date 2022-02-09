@@ -61,7 +61,8 @@ const Product = () => {
         // update cart
         // need to dispatch action. it doesnt know what to do with the action
         dispatch(
-            addProduct({product, quantity})
+            // this will add the product to the cart with the size and color
+            addProduct({...product, quantity, size, color})
         )
         
     };
