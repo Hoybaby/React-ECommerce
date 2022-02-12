@@ -4,8 +4,12 @@ import Navbar from '../components/Navbar/Navbar';
 import Announcement from '../components/Annoucement/Announcement';
 import Footer from '../components/Footer/Footer';
 import { Add, Remove } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
+
 
 const Cart = () => {
+
+    const cart = useSelector(state => state.cart);
     return (
         <Container>
             <Navbar/>
@@ -22,6 +26,7 @@ const Cart = () => {
                 </Top>
                 <Bottom>
                     <Info>
+                    {cart. products.map(product => (
                         <Product>
                             <ProductDetail>
                                 <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A"/>
@@ -41,26 +46,9 @@ const Cart = () => {
                                 <ProductPrice> $30</ProductPrice>
                             </PriceDetail>
                         </Product>
+                    ))}
                         <Hr/>
-                        <Product>
-                            <ProductDetail>
-                            <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
-                                <Details>
-                                    <ProductName><b>Product:</b> Graphic Tee</ProductName>
-                                    <ProductId><b>ID:</b> 86521863 </ProductId>
-                                    <ProductColor color ="grey"/>
-                                    <ProductSize><b>Size:</b> M</ProductSize>
-                                </Details>
-                            </ProductDetail>
-                            <PriceDetail>
-                                <ProductAmountContainer>
-                                    <Add/>
-                                    <ProductAmount>2</ProductAmount>
-                                    <Remove/>
-                                </ProductAmountContainer>
-                                <ProductPrice> $25</ProductPrice>
-                            </PriceDetail>
-                        </Product>
+                        
                     </Info>
                     <Summary>
                         <SummaryTitle>Order Summary</SummaryTitle>
